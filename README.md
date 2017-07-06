@@ -28,7 +28,8 @@ Trial versions are available from https://products.office.com/en-au/try.
 
 ## Download
 Binary releases available on https://github.com/pgodwin/PdfShrinker/releases
-For source, this is Github - you're looking the source!
+
+For source-code, this is Github - you're looking at the source!
 
 ## Future Enhacements
 I'm not looking at adding any features to the application anytime soon. However some useful ideas are:
