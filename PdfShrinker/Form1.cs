@@ -22,12 +22,17 @@ namespace PdfShrinker
         private WordToPdf _wordConverter;
         private PublisherToPdf _publisherConverter;
 
+        private string _quality;
+
         public frmMain()
         {
             InitializeComponent();
             this.AllowDrop = true;
             this.DragEnter += frmMain_DragEnter;
             this.DragDrop += frmMain_DragDrop;
+
+            this.comboBoxQuality.SelectedIndex = 0;
+            this.comboBoxQuality_SelectedIndexChanged(this, null);
         }
 
         
@@ -170,7 +175,7 @@ namespace PdfShrinker
             //  - /printer selects output similar to the Acrobat Distiller "Print Optimized" setting.
             //  - /prepress selects output similar to Acrobat Distiller "Prepress Optimized" setting.
             //  - /default selects output intended to be useful across a wide variety of uses, possibly at the expense of a larger output file.
-            gsArgs.Add("-dPDFSETTINGS=/screen");
+            gsArgs.Add("-dPDFSETTINGS=/" + this._quality);
 
 
             gsArgs.Add("-sOutputFile=" + outpath + "");
@@ -244,6 +249,11 @@ namespace PdfShrinker
                 _wordConverter.Dispose();
             if (_publisherConverter != null)
                 _publisherConverter.Dispose();
+        }
+
+        private void comboBoxQuality_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            this._quality = comboBoxQuality.Text;
         }
     }
 }
