@@ -121,7 +121,7 @@ namespace PdfShrinker
                 lblStatus.Visible = false;
                 lblFileStatus.Visible = false;
 
-                MessageBox.Show("Conversion Complete");
+                // MessageBox.Show("Conversion Complete");
             });
             
         }
